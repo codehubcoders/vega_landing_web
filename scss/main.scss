@@ -234,9 +234,10 @@ header {
   width: 100%;
   padding-bottom: 10px;
   z-index: 90;
-  background-color:   rgba(0, 0, 0, 0.1);
-
+  // background-color:   rgba(0, 0, 0, 0.1);
+  
   .nav {
+
       height: 100px;
       margin: 0 auto;
       display: flex;
@@ -274,6 +275,7 @@ header {
       @include mobile{
         flex-grow:0;
         padding: 10px 0;
+        text-align: left;
       }
       li {
         display: inline-block;
@@ -360,13 +362,19 @@ header {
         width: 40%;
         justify-content: center;
         display: flex;
+        @include tablet(){
+          display: block;
+          width: 50%;
+        }
         @include mobile(){
-          padding: 20px;
+          width: 100%;
+          padding: 20px 0;
         }
         img{
           width: 75%;
           @include tablet{
             width: 80%;
+            
           }
           
         }
@@ -374,7 +382,16 @@ header {
       }
       .how_text{
         width: 30%;
-
+        @include tablet{
+          width: 50%;
+          padding-right: 20px;
+          margin-bottom: 20px;
+        }
+        @include mobile(){
+          width: 100%;
+          padding-right: 20px;
+          margin-bottom: 20px;
+        }
         p{
           margin-top: 20px;
           margin-bottom: 20px;
@@ -382,7 +399,7 @@ header {
           line-height: 20px;
              display: flex;
              @include tablet{
-              width: 210px;
+              
               padding-right: 20px;
               margin-bottom: 20px;
             }
@@ -396,6 +413,7 @@ header {
          @include mobile(){
           width: 90%;
         }
+
         .top{
           display: flex;
           @include tablet{
@@ -658,21 +676,18 @@ header {
       display: flex;
       justify-content: space-between;
        align-items: flex-end;
-       .logo{
-  
-        img{
-         width: 150px;
-       }}
+
       .items{
-        width: 50%;
+        width: 500px;
         margin-left: 20px;
-        @include tablet(){
-          width:70%;
-           }
         @include mobile(){
           width: 80%;
-           }
+            }
           .input_box{
+            @include mobile(){
+              width: 280px;
+              margin: 0 auto;
+                }
             .input01{
               display: flex;
               @include mobile(){
@@ -682,7 +697,11 @@ header {
                 margin-right: 10px;
                 @include mobile(){
                   margin-bottom: 10px;
+                  margin-right: 0px;
                    }
+                &:last-child{
+                  margin-right: 0%;
+                }
                 &:focus{
                   outline: none;
                   text-decoration: none;
@@ -690,14 +709,12 @@ header {
               }
             }
             textarea{
+              width: 500px;
               margin-top: 10px;
-              width: 93%;
               @include mobile(){
-                width: 100%;
-                 }
-                 @include tablet(){
-                  width: 92.5%;
-                   }
+                width: 310px;
+                margin: 0 auto;
+                  }
             }
           }
           .btn{
@@ -730,7 +747,7 @@ textarea {
   resize: none;
   height: 88px;
   font-size: 14px;
-  padding: 15px;
+  padding: 15px 0;
 }
 
 input[type=text], input[type=email], input[type=password], textarea {

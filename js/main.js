@@ -19,3 +19,19 @@ spyEls.forEach(function(spyEl){
     .setClassToggle(spyEl, 'show')
     .addTo(new ScrollMagic.Controller());
 });
+
+const headEl = document.querySelector('header');
+window.addEventListener('scroll', _.throttle(function(){
+  console.log(window.scrollY);
+  if(window.scrollY > 160){
+    gsap.to(headEl, .6,{
+      backgroundColor: '#171636',
+    });
+  }else{
+    gsap.to(headEl, .6,{
+      backgroundColor: "rgba(0,0,0,0)"
+    });
+    
+  }
+  }, 300));
+
