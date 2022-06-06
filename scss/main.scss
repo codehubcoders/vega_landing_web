@@ -23,9 +23,7 @@ $desktop: 1024px;
   }
 }
 
-a {
-  text-decoration: none;
-}
+
 
 h1,
 h2,
@@ -83,7 +81,7 @@ body {
   font-weight: 400;
   background-color: #171636;
   font-size: 15px;
-  color: white;
+  color: #d3d3ef;
   margin: 0 auto;
   box-sizing: border-box;
   overflow-x: hidden; overflow-y: auto; 
@@ -96,7 +94,13 @@ border-radius: 2px;
 display: block;
 background: linear-gradient(to top, #ded8a2, #f3a811);
 }
-
+a {
+  text-decoration: none;
+  color: white;
+  &:hover{
+    color: #d3d3ef;
+  }
+}
 section{
   position: relative;
 
@@ -234,8 +238,7 @@ header {
   width: 100%;
   padding-bottom: 10px;
   z-index: 90;
-  // background-color:   rgba(0, 0, 0, 0.1);
-  
+
   .nav {
 
       height: 100px;
@@ -265,7 +268,7 @@ header {
         padding: 0 10px;
         position: absolute;
         right: 30px;
-        top: 130px;
+        top: 100px;
       }
     }
     .nav_item {
@@ -305,15 +308,20 @@ header {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
-    max-width: 80%;
+    max-width: 60%;
     padding: 0 20px;
     text-align: center;
     top: calc(50% + 36px);
 
     h1 {
       max-width: 500px;
+      font-size: 50px;
+      line-height: 55px;
       margin: 0 auto;
       margin-bottom: 20px;
+      span{
+        font-size: 40px;
+      }
       @include mobile{
         font-size: 25px;
         line-height: 30px;
@@ -321,9 +329,10 @@ header {
     }
 
     p {
-      margin-bottom: 50px;
+      margin-top: 15px;
       line-height: 20px;
       font-weight: 400;
+  
       @include mobile{
         font-size: 15px;
       }
@@ -359,16 +368,17 @@ header {
         display: block;
       }
       .how_img{
-        width: 40%;
-        justify-content: center;
-        display: flex;
+        width: 50%;
+        margin-left: 5%;
         @include tablet(){
           display: block;
-          width: 50%;
+          width: 70%; margin-left: 0;
         }
         @include mobile(){
+          display: flex;
           width: 100%;
           padding: 20px 0;
+         justify-content: center;
         }
         img{
           width: 75%;
@@ -381,7 +391,7 @@ header {
    
       }
       .how_text{
-        width: 30%;
+        width: 45%;
         @include tablet{
           width: 50%;
           padding-right: 20px;
@@ -408,25 +418,23 @@ header {
       }
     
       .description{
-         width: 30%;
+         width: 40%;
          margin: 0 auto;
          @include mobile(){
           width: 90%;
         }
 
-        .top{
-          display: flex;
-          @include tablet{
-            display: block;
-          }
-        }
         .description_01{
          padding-right: 20px;
          padding-bottom: 30px;
          @include tablet{
           padding-right: 0px;
         }
+        .in{
+          margin-left: 20px;
+        }
             p{
+          
             line-height: 15px;
             align-items: center;
             font-size: 16px;
@@ -440,7 +448,7 @@ header {
                 padding: 0 5px;}
             
               span{
-                margin-left: 20px;
+                
                 font-size: 12px;
              
             }
@@ -467,21 +475,48 @@ header {
     
       }
     }
-  .box{
+  .box1{
     padding: 0 10px;
     display: flex;
     justify-content: space-between;
-
-    .box1{
-      height: 150px;
+    @include mobile() {
+      display: block;
+     }
+    .box2{
+      height: auto;
+      min-height: 210px;
       padding: 10px;
       background-color:   rgba(255, 255, 255, 0.1);
-    width: 29%;
-    border-radius: 5px;
+      width: 29%;
+      border-radius: 5px;
+      @include mobile() {
+       height: auto;
+      }
+      .title_box{
+        align-items: center;
+         display: flex;
+      p{
+        font-size: 16px;
+        line-height: 20px;
+      }
+      img{
+        margin-right: 10px;
+        display: block;
+        width: 35px;
+      }
+    }
+    .text_box{
+      margin-top: 20px;
+      p{
+        font-size: 13px;
+        line-height: 15px;
+      }
+    }
     @include mobile(){
       font-size: 12px;
       line-height: 15px;
-      width: 25%;
+      width: 92%;
+      margin-bottom: 15px;
        }
   }
   }
