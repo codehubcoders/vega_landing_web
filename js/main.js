@@ -1,4 +1,22 @@
+document.getElementById('btn_send').onclick = function() {
+  const username = document.getElementById('input_username').value.trim();
+  const email = document.getElementById('input_email').value.trim();
+  const note = document.getElementById('input_comment').value.trim();
 
+  if (username && email && note) {
+    fetch('https://api.metastock.world/contactUs', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        username, email, note
+      }),
+    }).then((res) => {
+      if (res.ok) {
+        alert('Thank you for contacting us.');
+      }
+    });
+  }
+}
 
 const fadeEls = document.querySelectorAll('.intro .fade-in');
 fadeEls.forEach(function(fadeEl, index){
