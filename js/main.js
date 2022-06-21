@@ -4,17 +4,9 @@ document.getElementById('btn_send').onclick = function() {
   const note = document.getElementById('input_comment').value.trim();
 
   if (username && email && note) {
-    fetch('https://api.metastock.world/contactUs', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        username, email, note
-      }),
-    }).then((res) => {
-      if (res.ok) {
-        alert('Thank you for contacting us.');
-      }
-    });
+    window.open('mailto:vegalux001@gmail.com?subject=Please type your subject&body=' + JSON.stringify({
+      username, email, note
+    }));
   }
 }
 
