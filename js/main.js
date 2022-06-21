@@ -4,9 +4,9 @@ document.getElementById('btn_send').onclick = function() {
   const note = document.getElementById('input_comment').value.trim();
 
   if (username && email && note) {
-    window.open('mailto:vegalux001@gmail.com?subject=Please type your subject&body=' + JSON.stringify({
+    window.location.href = 'mailto:vegalux001@gmail.com?subject=Please type your subject&body=' + JSON.stringify({
       username, email, note
-    }));
+    });
   }
 }
 
